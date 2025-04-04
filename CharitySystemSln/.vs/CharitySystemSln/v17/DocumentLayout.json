@@ -1,12 +1,332 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\ASP.Net\\CharitySystemSln\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Extensions\\SessionExtensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Extensions\\SessionExtensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EventRegistrationModel.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\EventRegistrationModel.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Home\\Register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\SeedData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\Event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\Event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\EventListViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\ViewModels\\EventListViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\PagingInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\ViewModels\\PagingInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\CharityDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\CharityDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ICharityRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\ICharityRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Components\\NavigationMenuViewComponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Components\\NavigationMenuViewComponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_EventSummary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Shared\\_EventSummary.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ThankYou.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Views\\Home\\ThankYou.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EFCharityRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CharitySystem\\Models\\EFCharityRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Program.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Program.cs",
+              "RelativeToolTip": "CharitySystem\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:25:09.39Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "EFCharityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EFCharityRepository.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\EFCharityRepository.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EFCharityRepository.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\EFCharityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T19:03:09.107Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ThankYou.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ThankYou.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Home\\ThankYou.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ThankYou.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Home\\ThankYou.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T19:02:24.551Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ConfirmRegistration.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Home\\ConfirmRegistration.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T19:02:08.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Register.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Home\\Register.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Register.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Home\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T19:01:36.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Extensions\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Extensions\\SessionExtensions.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Extensions\\SessionExtensions.cs",
+              "RelativeToolTip": "CharitySystem\\Extensions\\SessionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T19:00:25.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EventRegistrationModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EventRegistrationModel.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\EventRegistrationModel.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\EventRegistrationModel.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\EventRegistrationModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T18:58:48.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SeedData.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\SeedData.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\SeedData.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\SeedData.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\SeedData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:28:18.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T16:38:19.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_EventSummary.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_EventSummary.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Shared\\_EventSummary.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\_EventSummary.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Shared\\_EventSummary.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T17:28:51.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NavigationMenuViewComponent.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Components\\NavigationMenuViewComponent.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Components\\NavigationMenuViewComponent.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Components\\NavigationMenuViewComponent.cs",
+              "RelativeToolTip": "CharitySystem\\Components\\NavigationMenuViewComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:20:47.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CharitySystem\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAH0AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:25:17.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Default.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Shared\\Components\\NavigationMenu\\Default.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T16:50:56.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T16:24:11.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ICharityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ICharityRepository.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\ICharityRepository.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ICharityRepository.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\ICharityRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:28:13.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CharityDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\CharityDbContext.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\CharityDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\CharityDbContext.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\CharityDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:47:29.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PagingInfo.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\PagingInfo.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\ViewModels\\PagingInfo.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\PagingInfo.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\ViewModels\\PagingInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T17:14:08.556Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EventListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\EventListViewModel.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\ViewModels\\EventListViewModel.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\ViewModels\\EventListViewModel.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\ViewModels\\EventListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:51:52.112Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Event.cs",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "CharitySystem\\Models\\Event.cs",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Models\\Event.cs",
+              "RelativeToolTip": "CharitySystem\\Models\\Event.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T16:48:42.982Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

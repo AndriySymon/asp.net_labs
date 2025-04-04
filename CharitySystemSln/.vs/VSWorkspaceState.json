@@ -1,8 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\CharitySystem"
+    "\\CharitySystem",
+    "\\CharitySystem\\Controllers",
+    "\\CharitySystem\\Extensions",
+    "\\CharitySystem\\Models",
+    "\\CharitySystem\\Models\\ViewModels",
+    "\\CharitySystem\\Views",
+    "\\CharitySystem\\Views\\Home",
+    "\\CharitySystem\\Views\\Shared",
+    "\\CharitySystem\\Views\\Shared\\Components",
+    "\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu"
   ],
-  "SelectedNode": "\\CharitySystemSln.sln",
+  "SelectedNode": "\\CharitySystem\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

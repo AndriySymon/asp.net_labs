@@ -1,22 +1,13 @@
-@model CharitySystem.Models.ViewModels.EventListViewModel
+п»ї@model CharitySystem.Models.ViewModels.EventListViewModel
 
-<h2 class="text-center mb-4">Список благодійних заходів</h2>
+<h2 class="text-center mb-4">Events</h2>
+
+<vc:NavigationMenu currentCategory="@Model.CurrentCategory" />
 
 <div class="row">
     @foreach (var e in Model.Events)
     {
-    <div class="col-md-6 mb-4">
-        <div class="card shadow">
-            <div class="card-body">
-                <h3 class="card-title">@e.Title</h3>
-                <p class="card-text">@e.Description</p>
-                <p><strong>Дата:</strong> @e.Date.ToString("dd MMM yyyy")</p>
-                <p><strong>Локація:</strong> @e.Location</p>
-                <p><strong>Кількість місць:</strong> @e.Capacity</p>
-                <p><strong>Ціль збору коштів:</strong> @e.FundraisingGoal.ToString("c")</p>
-            </div>
-        </div>
-    </div>
+    <partial name="_EventSummary" model="e" />
     }
 </div>
 
@@ -25,7 +16,7 @@
         @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
         {
         <li class="page-item @(i == Model.PagingInfo.CurrentPage ? "active" : "")">
-            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-page="@i">@i</a>
+            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-page="@i">@i</a>
         </li>
         }
     </ul>

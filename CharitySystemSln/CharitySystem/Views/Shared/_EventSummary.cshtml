@@ -1,0 +1,16 @@
+@model CharitySystem.Models.Event
+
+<div class="col-md-6 mb-4">
+    <div class="card shadow">
+        <div class="card-body">
+            <h3 class="card-title">@Model.Title</h3>
+            <p class="card-text">@Model.Description</p>
+            <p><strong>Дата:</strong> @Model.Date.ToString("dd MMM yyyy")</p>
+            <p><strong>Локація:</strong> @Model.Location</p>
+            <p><strong>Кількість місць:</strong> @Model.Capacity</p>
+            <p><strong>Ціль збору коштів:</strong> @Model.FundraisingGoal.ToString("c")</p>
+            <a href="@Url.Action("Register", "Home", new { eventId = Model.Id })" class="btn btn-primary">Реєстрація</a>
+        </div>
+    </div>
+</div>
+

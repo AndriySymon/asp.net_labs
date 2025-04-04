@@ -1,0 +1,11 @@
+@model CharitySystem.Models.EventRegistrationModel
+
+<h2>Підтвердження реєстрації на захід: @Model.EventTitle</h2>
+
+<p><strong>Ім'я:</strong> @Model.FirstName</p>
+<p><strong>Прізвище:</strong> @Model.LastName</p>
+<p><strong>Пошта:</strong> @Model.Email</p>
+
+<form method="post">
+    <button type="submit" class="btn btn-success">Підтвердити реєстрацію</button>
+</form>

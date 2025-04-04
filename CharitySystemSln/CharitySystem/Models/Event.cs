@@ -6,6 +6,7 @@ namespace CharitySystem.Models
 {
     public class Event
     {
+        public int Id { get; set; }
         [Key]
         public long? EventID { get; set; }
 
@@ -23,5 +24,7 @@ namespace CharitySystem.Models
 
         [Column(TypeName = "decimal(10, 2)")]
         public decimal FundraisingGoal { get; set; }
+
+        public string Category { get; set; }
     }
 }

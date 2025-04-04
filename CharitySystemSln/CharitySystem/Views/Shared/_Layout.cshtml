@@ -5,23 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CharitySystem</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #343a40 !important;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .sidebar {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 20px;
+            border-left: 3px solid #007bff;
+            max-height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+            .sidebar h3 {
+                font-size: 1.25rem;
+                margin-bottom: 20px;
+                color: #007bff;
+            }
+
+            .sidebar a {
+                display: block;
+                padding: 10px;
+                margin-bottom: 10px;
+                color: #343a40;
+                font-weight: bold;
+                text-decoration: none;
+                border-radius: 5px;
+                transition: background-color 0.3s ease;
+            }
+
+                .sidebar a:hover {
+                    background-color: #007bff;
+                    color: white;
+                }
+
+        .content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
+        }
+    </style>
+
 </head>
 <body>
     <header class="bg-primary text-white text-center py-3">
         <h1>Charity System</h1>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="@Url.Action("Index", "Home")">Головна</a>
+                <a class="navbar-brand" href="@Url.Action("Index", "Home")"></a>
             </div>
         </nav>
     </header>
 
     <div class="container mt-4">
-        @RenderBody()
+        <div class="row">
+            <aside class="col-md-3">
+                <div class="sidebar">
+                    @await Component.InvokeAsync("NavigationMenu")
+                </div>
+            </aside>
+
+            <main class="col-md-9">
+                <div class="content">
+                    @RenderBody()
+                </div>
+            </main>
+        </div>
     </div>
 
     <footer class="bg-dark text-white text-center py-3 mt-4">
-        <p>&copy; 2025 Charity System. Усі права захищені.</p>
+        <p>&copy; 2025 Charity System. All rights reserved.</p>
     </footer>
 
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>

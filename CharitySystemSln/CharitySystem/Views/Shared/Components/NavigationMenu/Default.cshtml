@@ -1,0 +1,11 @@
+@model IEnumerable<string>
+
+    <nav class="nav flex-column">
+        @foreach (var category in Model)
+    {
+        <a class="nav-link @(category == ViewData["CurrentCategory"] ? "active" : "")"
+           asp-controller="Home" asp-action="Index" asp-route-category="@category">
+            @category
+        </a>
+    }
+    </nav>

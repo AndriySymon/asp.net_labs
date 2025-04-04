@@ -9,6 +9,6 @@
     "\\Views\\Home",
     "\\Views\\Shared"
   ],
-  "SelectedNode": "\\Views\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }
