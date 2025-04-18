@@ -74,6 +74,14 @@
             padding: 10px 0;
             margin-top: 30px;
         }
+        span.text-danger {
+            color: #ff0000;
+            font-weight: bold;
+        }
+
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: #ff0000; 
+        }
     </style>
 
 </head>
@@ -108,5 +116,8 @@
     </footer>
 
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
 </body>
 </html>

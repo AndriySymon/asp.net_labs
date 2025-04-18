@@ -1,0 +1,27 @@
+@model CharitySystem.Models.UserModel
+
+<h2>Реєстрація</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" placeholder="Ім'я" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" placeholder="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password"></label>
+        <input asp-for="Password" placeholder="Пароль" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Зареєструватися</button>
+</form>
+
+<a href="@Url.Action("Login", "User")">Вже є акаунт? Увійдіть</a>

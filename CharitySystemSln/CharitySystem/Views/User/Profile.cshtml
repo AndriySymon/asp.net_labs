@@ -1,0 +1,10 @@
+@model UserModel
+<h2>Редагування профілю</h2>
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input asp-for="Name" placeholder="Ім'я користувача" required />
+    <input asp-for="Password" type="password" placeholder="Пароль" required />
+    <button type="submit">Зберегти</button>
+</form>
+<p><a href="/Account/Delete/@Model.Id">Видалити акаунт</a></p>
+<p><a href="/Account/Logout">Вийти з акаунту</a></p>

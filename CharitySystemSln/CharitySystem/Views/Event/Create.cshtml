@@ -1,0 +1,40 @@
+@model Event
+<h2>Створення заходу</h2>
+<form asp-action="Create" method="post">
+    <div>
+        <input asp-for="Title" placeholder="Назва" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div>
+        <textarea asp-for="Description" placeholder="Опис"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="Date" type="datetime-local" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="Location" placeholder="Місце" />
+        <span asp-validation-for="Location" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="Capacity" type="number" />
+        <span asp-validation-for="Capacity" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="FundraisingGoal" type="number" step="0.01" />
+        <span asp-validation-for="FundraisingGoal" class="text-danger"></span>
+    </div>
+
+    <div>
+        <input asp-for="Category" placeholder="Категорія" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Створити</button>
+</form>

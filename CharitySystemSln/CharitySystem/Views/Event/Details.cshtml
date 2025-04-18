@@ -1,0 +1,10 @@
+@model Event
+<h2>Деталі заходу</h2>
+<p>Назва: @Model.Title</p>
+<p>Опис: @Model.Description</p>
+<p>Дата: @Model.Date</p>
+<p>Місце: @Model.Location</p>
+<p>Кількість місць: @Model.Capacity</p>
+<p>Ціль збору: @Model.FundraisingGoal</p>
+<p>Категорія: @Model.Category</p>
+<p><a href="/Events/Edit/@Model.Id">Редагувати</a> | <a href="/Events/Delete/@Model.Id">Видалити</a></p>

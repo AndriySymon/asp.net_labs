@@ -1,0 +1,8 @@
+@model Event
+<h2>Підтвердження видалення заходу</h2>
+<p>Ви впевнені, що хочете видалити захід <strong>@Model.Title</strong>?</p>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Так, видалити</button>
+    <a href="/">Скасувати</a>
+</form>

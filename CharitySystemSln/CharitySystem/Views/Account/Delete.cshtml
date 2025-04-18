@@ -1,0 +1,8 @@
+@model UserModel
+<h2>Підтвердження видалення</h2>
+<p>Ви впевнені, що хочете видалити акаунт <strong>@Model.Name</strong>?</p>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit">Так, видалити</button>
+    <a href="/User/Profile">Скасувати</a>
+</form>

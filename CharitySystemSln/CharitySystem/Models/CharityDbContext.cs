@@ -7,6 +7,7 @@ namespace CharitySystem.Models
         public CharityDbContext(DbContextOptions<CharityDbContext> options) : base(options) { }
         public DbSet<Event> Events => Set<Event>();
         public DbSet<EventRegistrationModel> EventRegistrations { get; set; }
+        public DbSet<UserModel> Users { get; set; }
 
     }
 }

@@ -3,15 +3,15 @@
     "",
     "\\CharitySystem",
     "\\CharitySystem\\Controllers",
-    "\\CharitySystem\\Extensions",
     "\\CharitySystem\\Models",
-    "\\CharitySystem\\Models\\ViewModels",
     "\\CharitySystem\\Views",
+    "\\CharitySystem\\Views\\Event",
     "\\CharitySystem\\Views\\Home",
     "\\CharitySystem\\Views\\Shared",
     "\\CharitySystem\\Views\\Shared\\Components",
-    "\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu"
+    "\\CharitySystem\\Views\\Shared\\Components\\NavigationMenu",
+    "\\CharitySystem\\Views\\User"
   ],
-  "SelectedNode": "\\CharitySystem\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\CharitySystem\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

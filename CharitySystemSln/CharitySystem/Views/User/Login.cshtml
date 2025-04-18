@@ -1,0 +1,9 @@
+<h2>Вхід</h2>
+
+<form method="post" asp-action="Login">
+    <input name="email" placeholder="Email" /><br />
+    <input name="password" type="password" placeholder="Пароль" /><br />
+    <button type="submit">Увійти</button>
+</form>
+
+<a href="@Url.Action("Register", "Account")">Немає акаунта? Зареєструйтесь</a>
