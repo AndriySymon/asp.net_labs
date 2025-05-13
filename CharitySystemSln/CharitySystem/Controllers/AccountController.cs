@@ -1,108 +1,149 @@
+using CharitySystem.Models.ViewModels;
 using CharitySystem.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using System.Threading.Tasks;
 
-public class AccountController : Controller
+namespace CharitySystem.Controllers
 {
-    private readonly CharityDbContext context;
-
-    public AccountController(CharityDbContext ctx)
+    [AllowAnonymous]
+    public class AccountController : Controller
     {
-        context = ctx;
-    }
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-    public IActionResult Register() => View();
-
-    [HttpPost]
-    public IActionResult Register(UserModel model)
-    {
-        if (ModelState.IsValid)
+        public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
-            if (context.Users.Any(u => u.Email == model.Email))
+            _userManager = userManager;
+            _signInManager = signInManager;
+        }
+
+        public IActionResult Register() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
             {
-                ModelState.AddModelError("", "Користувач з таким Email вже існує.");
-                return View(model);
+                var existingUser = await _userManager.FindByEmailAsync(model.Email);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("Email", "Цей email вже зареєстрова-но.");
+                    return View(model);
+                }
+
+                var user = new IdentityUser
+                {
+                    UserName = model.Email,
+                    Email = model.Email
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Index", "Home");
+                }
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+            return View(model);
+        }
+
+        public IActionResult Login() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+
+                ModelState.AddModelError("", "Невірний логін або пароль");
+            }
+            return View(model);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Profile()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            return View(user);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Edit()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login");
+
+            var model = new EditProfileViewModel
+            {
+                Email = user.Email
+            };
+            return View(model);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Edit(EditProfileViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.GetUserAsync(User);
+                if (user == null) return RedirectToAction("Login");
+
+                user.Email = model.Email;
+                user.UserName = model.Email;
+
+                var result = await _userManager.UpdateAsync(user);
+
+                if (result.Succeeded)
+                    return RedirectToAction("Profile");
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+            }
+            return View(model);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Delete()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            return View(user);
+        }
+
+        [Authorize]
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user != null)
+            {
+                await _signInManager.SignOutAsync();
+                await _userManager.DeleteAsync(user);
             }
 
-            context.Users.Add(model);
-            context.SaveChanges();
-
-            return RedirectToAction("Login");
-        }
-        return View(model);
-    }
-
-    public IActionResult Login() => View();
-
-    [HttpPost]
-    public IActionResult Login(string email, string password)
-    {
-        var user = context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
-        if (user != null)
-        {
-            HttpContext.Session.SetInt32("UserId", user.Id);
             return RedirectToAction("Index", "Home");
         }
 
-        ModelState.AddModelError("", "Неправильний email або пароль.");
-        return View();
-    }
-
-    public IActionResult Profile()
-    {
-        var userId = HttpContext.Session.GetInt32("UserId");
-        if (userId == null) return RedirectToAction("Login");
-
-        var user = context.Users.Find(userId);
-        return View(user);
-    }
-
-    public IActionResult Edit() => Profile();
-
-    [HttpPost]
-    public IActionResult Edit(UserModel model)
-    {
-        if (ModelState.IsValid)
+        [Authorize]
+        public async Task<IActionResult> Logout()
         {
-            context.Users.Update(model);
-            context.SaveChanges();
-            return RedirectToAction("Profile");
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
-        return View(model);
-    }
-
-    public IActionResult Delete()
-    {
-        var userId = HttpContext.Session.GetInt32("UserId");
-        if (userId == null) return RedirectToAction("Login");
-
-        var user = context.Users.Find(userId);
-        if (user == null) return RedirectToAction("Profile"); 
-
-        return View(user); 
-    }
-
-    [HttpPost, ActionName("Delete")]
-    public IActionResult DeleteConfirmed()
-    {
-        var userId = HttpContext.Session.GetInt32("UserId");
-        if (userId != null)
-        {
-            var user = context.Users.Find(userId);
-            if (user != null)
-            {
-                context.Users.Remove(user);
-                context.SaveChanges();
-                HttpContext.Session.Clear();
-            }
-        }
-
-        return RedirectToAction("Index", "Home"); 
-    }
-
-    public IActionResult Logout()
-    {
-        HttpContext.Session.Clear();
-        return RedirectToAction("Index", "Home");
     }
 }

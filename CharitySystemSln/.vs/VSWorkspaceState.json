@@ -2,7 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\CharitySystem",
-    "\\CharitySystem\\Controllers",
     "\\CharitySystem\\Models",
     "\\CharitySystem\\Views",
     "\\CharitySystem\\Views\\Event",

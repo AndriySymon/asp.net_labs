@@ -3,4 +3,5 @@
 *.jpg
 *.png
 *.mp4
-*.zip
+*.zip**/obj/**
+**/bin/**
