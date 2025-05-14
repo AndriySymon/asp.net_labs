@@ -1,0 +1,38 @@
+﻿@page "/users/delete/{Id:int}"
+@using CharitySystem.Client.Services
+@inject UserService UserService
+@inject NavigationManager Navigation
+@using CharitySystem_Shared
+
+<h3>Are you sure you want to delete this user?</h3>
+
+@if (user == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <p><strong>Name:</strong> @user.Name</p>
+        <p><strong>Email:</strong> @user.Email</p>
+
+        <button class="btn btn-danger" @onclick="ConfirmDeleteUser">Delete</button>
+        <a class="btn btn-secondary" href="/users">Cancel</a>
+    </div>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    UserModel? user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await UserService.GetUser(Id);
+    }
+
+    async Task ConfirmDeleteUser()
+    {
+        await UserService.DeleteUser(Id);
+        Navigation.NavigateTo("/users");
+    }
+}

@@ -1,0 +1,83 @@
+﻿@page "/events/edit/{id:int}"
+@using CharitySystem.Client.Services
+@inject EventService EventService
+@inject NavigationManager Navigation
+@using CharitySystem.Models
+
+<h3>Редагування події</h3>
+
+@if (ev == null)
+{
+	<p><em>Завантаження...</em></p>
+}
+else
+{
+	<EditForm Model="ev" OnValidSubmit="Save">
+		<DataAnnotationsValidator />
+		<ValidationSummary />
+
+		<div class="mb-3">
+			<label class="form-label">EventID</label>
+			<InputNumber @bind-Value="ev.EventID" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Назва</label>
+			<InputText @bind-Value="ev.Title" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Опис</label>
+			<InputTextArea @bind-Value="ev.Description" class="form-control" rows="3" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Дата проведення</label>
+			<InputDate @bind-Value="ev.Date" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Місце</label>
+			<InputText @bind-Value="ev.Location" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Кількість місць</label>
+			<InputNumber @bind-Value="ev.Capacity" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Мета збору (₴)</label>
+			<InputNumber @bind-Value="ev.FundraisingGoal" class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Категорія</label>
+			<InputText @bind-Value="ev.Category" class="form-control" />
+		</div>
+
+		<button type="submit" class="btn btn-primary">Зберегти</button>
+		<button type="button" class="btn btn-secondary ms-2" @onclick="Cancel">Скасувати</button>
+	</EditForm>
+}
+
+@code {
+	[Parameter] public int id { get; set; }
+	private Event? ev;
+
+	protected override async Task OnInitializedAsync()
+	{
+		ev = await EventService.GetEvent(id);
+	}
+
+	private async Task Save()
+	{
+		await EventService.UpdateEvent(ev!);
+		Navigation.NavigateTo("/events");
+	}
+
+	private void Cancel()
+	{
+		Navigation.NavigateTo("/events");
+	}
+}

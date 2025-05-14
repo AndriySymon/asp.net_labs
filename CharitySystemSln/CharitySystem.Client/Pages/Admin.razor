@@ -1,0 +1,25 @@
+﻿@page "/admin"
+@using Blazored.LocalStorage
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthProvider
+@attribute [Authorize(Roles = "Admin")]
+
+<h3>Admin Panel</h3>
+
+<p>Welcome to the admin panel!</p>
+
+<button class="btn btn-danger" @onclick="Logout">Logout</button>
+
+@code {
+    private async Task Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+
+        ((CustomAuthenticationStateProvider)AuthProvider).NotifyUserLogout();
+
+        Navigation.NavigateTo("/login");
+    }
+}

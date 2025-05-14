@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "CharitySystem.WebApi\\CharitySystem.WebApi.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "CharitySystem.Client\\CharitySystem.Client.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

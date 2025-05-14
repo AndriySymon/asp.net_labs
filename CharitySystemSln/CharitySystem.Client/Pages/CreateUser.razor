@@ -1,0 +1,43 @@
+﻿@page "/users/create"
+@using CharitySystem.Client.Services
+@inject UserService UserService
+@inject NavigationManager Navigation
+@using CharitySystem_Shared
+@using System.ComponentModel.DataAnnotations
+
+<h3>Create User</h3>
+
+<EditForm Model="user" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Name:</label>
+        <InputText @bind-Value="user.Name" class="form-control" />
+        <ValidationMessage For="@(() => user.Name)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email:</label>
+        <InputText @bind-Value="user.Email" class="form-control" />
+        <ValidationMessage For="@(() => user.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password:</label>
+        <InputText @bind-Value="user.Password" class="form-control" type="password" />
+        <ValidationMessage For="@(() => user.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Create</button>
+</EditForm>
+
+@code {
+    UserModel user = new();
+
+    async Task HandleValidSubmit()
+    {
+        await UserService.CreateUser(user);
+        Navigation.NavigateTo("/users");
+    }
+}

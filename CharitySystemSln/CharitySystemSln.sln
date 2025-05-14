@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharitySystem", "CharitySys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharitySystem.WebApi", "CharitySystem.WebApi\CharitySystem.WebApi.csproj", "{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharitySystem.Client", "CharitySystem.Client\CharitySystem.Client.csproj", "{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharitySystem_Shared", "CharitySystem_Shared\CharitySystem_Shared.csproj", "{58EEA599-5FF3-48F8-B179-DB18D50CCB2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58EEA599-5FF3-48F8-B179-DB18D50CCB2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EEA599-5FF3-48F8-B179-DB18D50CCB2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EEA599-5FF3-48F8-B179-DB18D50CCB2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EEA599-5FF3-48F8-B179-DB18D50CCB2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

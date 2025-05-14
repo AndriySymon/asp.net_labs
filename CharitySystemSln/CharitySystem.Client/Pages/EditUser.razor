@@ -1,0 +1,52 @@
+﻿@page "/users/edit/{Id:int}"
+@using CharitySystem.Client.Services
+@inject UserService UserService
+@inject NavigationManager Navigation
+@using CharitySystem_Shared
+
+<h3>Edit User</h3>
+
+@if (user == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <EditForm Model="user" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label>Name:</label>
+            <InputText @bind-Value="user.Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Email:</label>
+            <InputText @bind-Value="user.Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Password:</label>
+            <InputText @bind-Value="user.Password" class="form-control" type="password" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    UserModel? user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        user = await UserService.GetUser(Id);
+    }
+
+    async Task HandleValidSubmit()
+    {
+        await UserService.UpdateUser(user!);
+        Navigation.NavigateTo("/users");
+    }
+}

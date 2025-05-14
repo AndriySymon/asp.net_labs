@@ -1,0 +1,77 @@
+﻿@page "/events/delete/{id:int}"
+@using CharitySystem.Client.Services
+@inject EventService EventService
+@inject NavigationManager Navigation
+@using CharitySystem.Models
+
+<h3>Підтвердження видалення події</h3>
+
+@if (ev == null)
+{
+    <p><em>Завантаження...</em></p>
+}
+else
+{
+    <div class="alert alert-warning">
+        <p>Ви дійсно хочете видалити подію <strong>@ev.Title</strong>?</p>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>EventID</th>
+            <td>@ev.EventID</td>
+        </tr>
+        <tr>
+            <th>Назва</th>
+            <td>@ev.Title</td>
+        </tr>
+        <tr>
+            <th>Опис</th>
+            <td>@ev.Description</td>
+        </tr>
+        <tr>
+            <th>Дата</th>
+            <td>@ev.Date.ToString("dd.MM.yyyy HH:mm")</td>
+        </tr>
+        <tr>
+            <th>Місце</th>
+            <td>@ev.Location</td>
+        </tr>
+        <tr>
+            <th>Кількість місць</th>
+            <td>@ev.Capacity</td>
+        </tr>
+        <tr>
+            <th>Мета збору</th>
+            <td>@($"{ev.FundraisingGoal:C}")</td>
+        </tr>
+        <tr>
+            <th>Категорія</th>
+            <td>@ev.Category</td>
+        </tr>
+    </table>
+
+    <button class="btn btn-danger me-2" @onclick="Delete">Видалити</button>
+    <button class="btn btn-secondary" @onclick="Cancel">Скасувати</button>
+}
+
+@code {
+    [Parameter] public int id { get; set; }
+    private Event? ev;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ev = await EventService.GetEvent(id);
+    }
+
+    private async Task Delete()
+    {
+        await EventService.DeleteEvent(id);
+        Navigation.NavigateTo("/events");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/events");
+    }
+}

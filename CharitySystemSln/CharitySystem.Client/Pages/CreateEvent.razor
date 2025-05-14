@@ -1,0 +1,70 @@
+﻿@page "/events/create"
+@using CharitySystem.Client.Services
+@using CharitySystem.Models
+@inject EventService EventService
+@inject NavigationManager Navigation
+
+<h3>Створення події</h3>
+
+<EditForm Model="ev" OnValidSubmit="Create">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">EventID</label>
+        <InputNumber @bind-Value="ev.EventID" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Назва</label>
+        <InputText @bind-Value="ev.Title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Опис</label>
+        <InputTextArea @bind-Value="ev.Description" class="form-control" rows="3" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Дата проведення</label>
+        <InputDate @bind-Value="ev.Date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Місце</label>
+        <InputText @bind-Value="ev.Location" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Кількість місць</label>
+        <InputNumber @bind-Value="ev.Capacity" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Мета збору (₴)</label>
+        <InputNumber @bind-Value="ev.FundraisingGoal" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Категорія</label>
+        <InputText @bind-Value="ev.Category" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Створити</button>
+    <button type="button" class="btn btn-secondary ms-2" @onclick="Cancel">Скасувати</button>
+</EditForm>
+
+@code {
+    private Event ev = new();
+
+    private async Task Create()
+    {
+        await EventService.CreateEvent(ev);
+        Navigation.NavigateTo("/events");
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/events");
+    }
+}

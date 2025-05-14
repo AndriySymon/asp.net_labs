@@ -1,0 +1,21 @@
+﻿@page "/profile"
+@attribute [Authorize]
+@using Blazored.LocalStorage
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@inject NavigationManager Navigation
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthProvider
+
+<h3>Welcome to your profile!</h3>
+
+<button class="btn btn-danger" @onclick="Logout">Logout</button>
+
+@code {
+    private async Task Logout()
+    {
+        await LocalStorage.RemoveItemAsync("authToken");
+        ((CustomAuthenticationStateProvider)AuthProvider).NotifyUserLogout();
+        Navigation.NavigateTo("/login");
+    }
+}

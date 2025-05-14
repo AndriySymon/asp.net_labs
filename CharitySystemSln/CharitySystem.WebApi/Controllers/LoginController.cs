@@ -5,8 +5,6 @@ using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using CharitySystem.Models;
-using Microsoft.AspNetCore.Identity.Data;
-using LoginRequest = CharitySystem.Models.LoginRequest;
 
 namespace CharitySystem.WebApi.Controllers
 {
@@ -36,19 +34,29 @@ namespace CharitySystem.WebApi.Controllers
                 };
 
                 var createResult = await _userManager.CreateAsync(newUser, "Test123!");
-                if (!createResult.Succeeded)
-                    return BadRequest("Failed to create test user.");
+                if (createResult.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(newUser, "User");
+                }
             }
 
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
-                var claims = new[]
-                {
+                var userRoles = await _userManager.GetRolesAsync(user);
+
+                var claims = new List<Claim>
+        {
           new Claim(JwtRegisteredClaimNames.Sub, user.Email),
           new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-          new Claim(ClaimTypes.NameIdentifier, user.Id)
+          new Claim(ClaimTypes.NameIdentifier, user.Id),
+          new Claim(ClaimTypes.Email, user.Email)
         };
+
+                foreach (var role in userRoles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
 
                 var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
                 var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -61,7 +69,9 @@ namespace CharitySystem.WebApi.Controllers
                   signingCredentials: creds
                 );
 
-                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+                var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+                return Ok(new { token = tokenString });
             }
 
             return Unauthorized("Invalid credentials");

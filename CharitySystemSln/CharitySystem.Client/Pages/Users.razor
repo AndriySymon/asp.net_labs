@@ -1,0 +1,43 @@
+﻿@page "/users"
+@using CharitySystem.Client.Services
+@inject UserService UserService
+@using CharitySystem_Shared
+
+<h3>Users</h3>
+
+<a href="/users/create" class="btn btn-primary">Create New</a>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr><th>Name</th><th>Email</th><th>Actions</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                    <td>
+                        <NavLink href="@($"/users/edit/{user.Id}")" class="btn btn-sm btn-warning">Edit</NavLink>
+                        <NavLink href="@($"/users/delete/{user.Id}")" class="btn btn-sm btn-danger">Delete</NavLink>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<UserModel>? users;
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await UserService.GetUsers();
+    }
+}

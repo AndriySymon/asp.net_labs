@@ -1,0 +1,36 @@
+﻿@page "/events/edit/{Id:int}"
+@inject EventService EventService
+@inject NavigationManager Nav
+
+<h3>Редагування події</h3>
+
+<EditForm Model="eventToEdit" OnValidSubmit="UpdateEvent">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <InputText id="title" @bind-Value="eventModel.Title" class="form-control" />
+    <InputTextArea id="description" @bind-Value="eventModel.Description" class="form-control" />
+    <InputDate id="date" @bind-Value="eventModel.Date" class="form-control" />
+    <InputText id="location" @bind-Value="eventModel.Location" class="form-control" />
+    <InputNumber id="capacity" @bind-Value="eventModel.Capacity" class="form-control" />
+    <InputNumber id="goal" @bind-Value="eventModel.FundraisingGoal" class="form-control" />
+    <InputText id="category" @bind-Value="eventModel.Category" class="form-control" />
+
+    <button class="btn btn-warning mt-3" type="submit">Оновити</button>
+</EditForm>
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Event eventToEdit = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var ev = await EventService.GetEventByIdAsync(Id);
+        if (ev != null) eventToEdit = ev;
+    }
+
+    private async Task UpdateEvent()
+    {
+        await EventService.UpdateEventAsync(Id, eventToEdit);
+        Nav.NavigateTo("/events");
+    }
+}

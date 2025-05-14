@@ -1,0 +1,57 @@
+﻿@page "/events"
+@inject EventService EventService
+@using CharitySystem.Models
+
+<h3>Події</h3>
+
+<a class="btn btn-primary" href="/events/create">Додати подію</a>
+
+@if (events == null)
+{
+    <p><em>Завантаження...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Дата</th>
+                <th>Місце</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ev in events)
+            {
+                <tr>
+                    <td>@ev.Title</td>
+                    <td>@ev.Date.ToShortDateString()</td>
+                    <td>@ev.Location</td>
+                    <td>
+                        <a href=$"/events/edit/{ev.Id}" class="btn btn-warning">Редагувати</a>
+                        <a href=$"/events/details/{ev.Id}" class="btn btn-info">Деталі</a>
+                        <button class="btn btn-danger" @onclick="() => DeleteEvent(ev.Id)">Видалити</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Event>? events;
+
+    protected override async Task OnInitializedAsync()
+    {
+        events = await EventService.GetEventsAsync();
+    }
+
+    private async Task DeleteEvent(int id)
+    {
+        if (await EventService.DeleteEventAsync(id))
+        {
+            events = await EventService.GetEventsAsync();
+        }
+    }
+}

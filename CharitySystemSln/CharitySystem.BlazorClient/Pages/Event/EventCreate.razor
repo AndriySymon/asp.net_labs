@@ -1,0 +1,34 @@
+﻿@page "/events/create"
+@inject EventService EventService
+@using CharitySystem.Models
+@using Microsoft.AspNetCore.Components.Forms
+@using System.ComponentModel.DataAnnotations
+
+<h3>Додати подію</h3>
+
+<EditForm Model="eventModel" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="title" @bind-Value="eventModel.Title" class="form-control" />
+    <InputTextArea id="description" @bind-Value="eventModel.Description" class="form-control" />
+    <InputDate id="date" @bind-Value="eventModel.Date" class="form-control" />
+    <InputText id="location" @bind-Value="eventModel.Location" class="form-control" />
+    <InputNumber id="capacity" @bind-Value="eventModel.Capacity" class="form-control" />
+    <InputNumber id="goal" @bind-Value="eventModel.FundraisingGoal" class="form-control" />
+    <InputText id="category" @bind-Value="eventModel.Category" class="form-control" />
+
+    <button type="submit" class="btn btn-success mt-3">Зберегти</button>
+</EditForm>
+
+@code {
+    private Event eventModel = new();
+
+    private async Task HandleValidSubmit()
+    {
+        if (await EventService.CreateEventAsync(eventModel))
+        {
+            // Перенаправити
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿@page "/events/details/{Id:int}"
+@inject EventService EventService
+
+<h3>Деталі події</h3>
+
+@if (ev == null)
+{
+    <p>Завантаження...</p>
+}
+else
+{
+    <p><strong>Назва:</strong> @ev.Title</p>
+    <p><strong>Опис:</strong> @ev.Description</p>
+    <p><strong>Дата:</strong> @ev.Date</p>
+    <p><strong>Місце:</strong> @ev.Location</p>
+    <p><strong>Мета збору:</strong> @ev.FundraisingGoal грн</p>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private Event? ev;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ev = await EventService.GetEventByIdAsync(Id);
+    }
+}
