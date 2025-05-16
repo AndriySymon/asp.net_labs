@@ -1,0 +1,14 @@
+﻿@model CharitySystem.Models.DonationModel
+
+<h3>Підтвердити донат для: @Model.EventTitle</h3>
+
+<form asp-action="Donate" method="post">
+	<input type="hidden" asp-for="EventId" />
+	<input type="hidden" asp-for="EventTitle" />
+	<div class="form-group">
+		<label asp-for="Amount"></label>
+		<input asp-for="Amount" class="form-control" />
+		<span asp-validation-for="Amount" class="text-danger"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Підтвердити</button>
+</form>

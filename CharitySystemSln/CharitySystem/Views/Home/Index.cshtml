@@ -1,5 +1,7 @@
 ﻿@model CharitySystem.Models.ViewModels.EventListViewModel
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
 <h2 class="text-center mb-4">Events</h2>
 
 <vc:NavigationMenu currentCategory="@Model.CurrentCategory" />
@@ -7,7 +9,29 @@
 <div class="row">
     @foreach (var e in Model.Events)
     {
-    <partial name="_EventSummary" model="e" />
+        <div class="col-md-6 mb-4">
+            <partial name="_EventSummary" model="e" />
+
+            <div class="mt-2">
+                <strong>Кількість зареєстрованих:</strong>
+                <span id="registrations-@e.Id">@e.CurrentRegistrations</span> / @e.Capacity
+            </div>
+
+            <div>
+                <strong>Зібрано коштів:</strong>
+                <span id="funds-@e.Id">@e.CurrentFunds.ToString("F2")</span> / @e.FundraisingGoal.ToString("F2")
+            </div>
+            <a asp-controller="Home" asp-action="Donate" asp-route-eventId="@e.Id" class="btn btn-sm btn-success mt-2">Задонатити</a>
+
+            <div class="progress mt-2">
+                <div class="progress-bar" role="progressbar"
+                     style="width: @(e.FundraisingGoal > 0 ? Math.Min(100, (int)(e.CurrentFunds / e.FundraisingGoal * 100)) : 0)%"
+                     aria-valuenow="@e.CurrentFunds" aria-valuemin="0"
+                     aria-valuemax="@e.FundraisingGoal">
+                    @(e.FundraisingGoal > 0 ? Math.Min(100, (int)(e.CurrentFunds / e.FundraisingGoal * 100)) : 0)%
+                </div>
+            </div>
+        </div>
     }
 </div>
 
@@ -19,9 +43,37 @@
     <ul class="pagination justify-content-center">
         @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
         {
-        <li class="page-item @(i == Model.PagingInfo.CurrentPage ? "active" : "")">
-            <a class="page-link" asp-controller="Home" asp-action="Index" asp-route-category="@Model.CurrentCategory" asp-route-page="@i">@i</a><br />
-        </li>
+            <li class="page-item @(i == Model.PagingInfo.CurrentPage ? "active" : "")">
+                <a class="page-link"
+                   asp-controller="Home"
+                   asp-action="Index"
+                   asp-route-category="@Model.CurrentCategory"
+                   asp-route-page="@i">@i</a>
+            </li>
         }
     </ul>
 </nav>
+
+<script>
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("/eventHub")
+        .build();
+
+    connection.on("ReceiveEventStatsUpdate", (eventId, currentRegistrations, currentFunds) => {
+        const regElement = document.getElementById(`registrations-${eventId}`);
+        const fundElement = document.getElementById(`funds-${eventId}`);
+        const progressBar = document.querySelector(`#progress-${eventId}`);
+
+        if (regElement) regElement.innerText = currentRegistrations;
+        if (fundElement) fundElement.innerText = currentFunds.toFixed(2);
+
+        const goal = parseFloat(fundElement?.getAttribute("data-goal") || "0");
+        if (goal > 0 && progressBar) {
+            const percent = Math.min(100, (currentFunds / goal) * 100);
+            progressBar.style.width = percent + "%";
+            progressBar.innerText = Math.floor(percent) + "%";
+        }
+    });
+
+    connection.start().catch(err => console.error(err.toString()));
+</script>

@@ -32,6 +32,7 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AppIdentityDbContext>()
     .AddDefaultTokenProviders();
 
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -47,5 +48,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 SeedData.EnsurePopulated(app);
+
+app.MapHub<CharitySystem.Hubs.EventHub>("/eventHub");
 
 app.Run();

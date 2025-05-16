@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}|CharitySystem.WebApi\\CharitySystem.WebApi.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem.webapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}|CharitySystem.WebApi\\CharitySystem.WebApi.csproj|solutionrelative:charitysystem.webapi\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}|CharitySystem.Client\\CharitySystem.Client.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem.client\\pages\\admin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}|CharitySystem.Client\\CharitySystem.Client.csproj|solutionrelative:charitysystem.client\\pages\\admin.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}|CharitySystem.WebApi\\CharitySystem.WebApi.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{505AD01A-DC4C-4A07-8001-A7968DC3C8A9}|CharitySystem.WebApi\\CharitySystem.WebApi.csproj|solutionrelative:charitysystem.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}|CharitySystem.Client\\CharitySystem.Client.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1B4918B-98F8-4B1B-8C3B-11FA903320A0}|CharitySystem.Client\\CharitySystem.Client.csproj|solutionrelative:charitysystem.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1F930D5A-E2EC-8292-0D26-402AC2BAFD41}|CharitySystem\\CharitySystem.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem\\views\\home\\donate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1F930D5A-E2EC-8292-0D26-402AC2BAFD41}|CharitySystem\\CharitySystem.csproj|solutionrelative:charitysystem\\views\\home\\donate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F930D5A-E2EC-8292-0D26-402AC2BAFD41}|CharitySystem\\CharitySystem.csproj|c:\\users\\user\\onedrive\\desktop\\asp.net\\charitysystemsln\\charitysystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,46 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Program.cs",
               "RelativeDocumentMoniker": "CharitySystem\\Program.cs",
               "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Program.cs",
               "RelativeToolTip": "CharitySystem\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-02T16:25:09.39Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "CharitySystem.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.WebApi\\Program.cs",
-              "RelativeToolTip": "CharitySystem.WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-13T15:27:55.468Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.Client\\Program.cs",
-              "RelativeDocumentMoniker": "CharitySystem.Client\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.Client\\Program.cs",
-              "RelativeToolTip": "CharitySystem.Client\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T15:05:02.134Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -100,27 +61,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.WebApi\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "CharitySystem.WebApi\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.WebApi\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "CharitySystem.WebApi\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAYwBEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-14T19:53:16.024Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Admin.razor",
-              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.Client\\Pages\\Admin.razor",
-              "RelativeDocumentMoniker": "CharitySystem.Client\\Pages\\Admin.razor",
-              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem.Client\\Pages\\Admin.razor",
-              "RelativeToolTip": "CharitySystem.Client\\Pages\\Admin.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Title": "Donate.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Donate.cshtml",
+              "RelativeDocumentMoniker": "CharitySystem\\Views\\Home\\Donate.cshtml",
+              "ToolTip": "C:\\Users\\user\\OneDrive\\Desktop\\ASP.Net\\CharitySystemSln\\CharitySystem\\Views\\Home\\Donate.cshtml",
+              "RelativeToolTip": "CharitySystem\\Views\\Home\\Donate.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-14T19:52:35.407Z",
+              "WhenOpened": "2025-05-16T14:46:37.594Z",
               "EditorCaption": ""
             }
           ]

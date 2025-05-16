@@ -46,5 +46,12 @@ namespace CharitySystem.Models
         [StringLength(100, ErrorMessage = "Категорія не може бути довшою за 100 символів")]
         [Display(Name = "Категорія")]
         public string Category { get; set; }
+
+        [Display(Name = "Поточна кількість реєстрацій")]
+        public int CurrentRegistrations { get; set; } = 0;
+
+        [Display(Name = "Поточна сума внесків")]
+        [Column(TypeName = "decimal(10, 2)")]
+        public decimal CurrentFunds { get; set; } = 0;
     }
 }

@@ -4,6 +4,8 @@ using CharitySystem.Models.ViewModels;
 using System.Linq;
 using Microsoft.AspNetCore.Http;
 using CharitySystem.Extensions;
+using Microsoft.AspNetCore.SignalR;
+using CharitySystem.Hubs;
 
 namespace CharitySystem.Controllers
 {
@@ -13,10 +15,13 @@ namespace CharitySystem.Controllers
         private readonly CharityDbContext dbContext;
         private const int PageSize = 5;
 
-        public HomeController(ICharityRepository repo, CharityDbContext context)
+        private readonly IHubContext<EventHub> _hubContext;
+
+        public HomeController(ICharityRepository repo, CharityDbContext context, IHubContext<EventHub> hubContext)
         {
             repository = repo;
             dbContext = context;
+            _hubContext = hubContext;
         }
 
         public IActionResult Index(string? category, int page = 1)
@@ -89,7 +94,7 @@ namespace CharitySystem.Controllers
         }
 
         [HttpPost]
-        public IActionResult ConfirmRegistration(EventRegistrationModel model)
+        public async Task<IActionResult> ConfirmRegistrationAsync(EventRegistrationModel model)
         {
             var registrationData = HttpContext.Session.GetObject<EventRegistrationModel>("EventRegistration");
 
@@ -115,6 +120,18 @@ namespace CharitySystem.Controllers
                 dbContext.EventRegistrations.Add(newRegistration);
                 dbContext.SaveChanges();
 
+                var eventEntity = dbContext.Events.FirstOrDefault(e => e.Id == newRegistration.EventId);
+                var registeredEvent = dbContext.Events.FirstOrDefault(e => e.Id == registrationData.EventId);
+                if (registeredEvent != null)
+                {
+                    registeredEvent.CurrentRegistrations += 1;
+                    eventEntity.CurrentFunds += 100;
+                    dbContext.SaveChanges();
+
+                    await _hubContext.Clients.All.SendAsync("UpdateRegistrations", registeredEvent.Id, registeredEvent.CurrentRegistrations);
+                    await _hubContext.Clients.All.SendAsync("ReceiveEventStatsUpdate", eventEntity.Id, eventEntity.CurrentRegistrations, eventEntity.CurrentFunds);
+                }
+
                 Console.WriteLine("Реєстрація успішно збережена в БД");
 
                 HttpContext.Session.Remove("EventRegistration");
@@ -126,6 +143,39 @@ namespace CharitySystem.Controllers
                 Console.WriteLine($"Помилка при збереженні: {ex.Message}");
                 return RedirectToAction("Index");
             }
+        }
+        public IActionResult Donate(int eventId)
+        {
+            var evt = repository.Events.FirstOrDefault(e => e.Id == eventId);
+            if (evt == null)
+                return NotFound();
+
+            var model = new DonationModel
+            {
+                EventId = evt.Id,
+                EventTitle = evt.Title
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Donate(DonationModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var evt = dbContext.Events.FirstOrDefault(e => e.Id == model.EventId);
+                if (evt == null) return NotFound();
+
+                evt.CurrentFunds += model.Amount;
+                dbContext.SaveChanges();
+
+                var hubContext = HttpContext.RequestServices.GetService<IHubContext<EventHub>>();
+                hubContext?.Clients.All.SendAsync("ReceiveEventStatsUpdate", evt.Id, evt.CurrentRegistrations, evt.CurrentFunds);
+
+                return RedirectToAction("Index");
+            }
+
+            return View(model);
         }
 
     }
