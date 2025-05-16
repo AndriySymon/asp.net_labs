@@ -14,8 +14,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowBlazorClient", policy =>
     {
         policy.WithOrigins("https://localhost:7274")
-           .AllowAnyHeader()
-           .AllowAnyMethod();
+         .AllowAnyHeader()
+         .AllowAnyMethod();
     });
 });
 
@@ -64,15 +64,15 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
     await SeedRolesAsync(roleManager);
-    await SeedTestUserAsync(userManager);
 }
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors("AllowBlazorClient");
@@ -92,40 +92,3 @@ static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         }
     }
 }
-
-static async Task SeedTestUserAsync(UserManager<IdentityUser> userManager)
-{
-    var userEmail = "test@example.com";
-    var user = await userManager.FindByEmailAsync(userEmail);
-    if (user == null)
-    {
-        var newUser = new IdentityUser
-        {
-            UserName = userEmail,
-            Email = userEmail
-        };
-        var result = await userManager.CreateAsync(newUser, "Test123!");
-        if (result.Succeeded)
-        {
-            await userManager.AddToRoleAsync(newUser, "User");
-        }
-    }
-
-    var adminEmail = "admin@example.com";
-    var admin = await userManager.FindByEmailAsync(adminEmail);
-    if (admin == null)
-    {
-        var newAdmin = new IdentityUser
-        {
-            UserName = adminEmail,
-            Email = adminEmail,
-            EmailConfirmed = true
-        };
-        var result = await userManager.CreateAsync(newAdmin, "Admin123!");
-        if (result.Succeeded)
-        {
-            await userManager.AddToRoleAsync(newAdmin, "Admin");
-        }
-    }
-}
-

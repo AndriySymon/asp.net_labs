@@ -24,22 +24,6 @@ namespace CharitySystem.WebApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest model)
         {
-            var existingUser = await _userManager.FindByEmailAsync("test@example.com");
-            if (existingUser == null)
-            {
-                var newUser = new IdentityUser
-                {
-                    UserName = "test@example.com",
-                    Email = "test@example.com"
-                };
-
-                var createResult = await _userManager.CreateAsync(newUser, "Test123!");
-                if (createResult.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(newUser, "User");
-                }
-            }
-
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
@@ -53,7 +37,7 @@ namespace CharitySystem.WebApi.Controllers
           new Claim(ClaimTypes.Email, user.Email)
         };
 
-                foreach (var role in userRoles)
+                foreach (var role in userRoles)
                 {
                     claims.Add(new Claim(ClaimTypes.Role, role));
                 }
